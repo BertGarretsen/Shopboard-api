@@ -10,5 +10,6 @@ RUN ./gradlew build --no-daemon -x test
 # Stage 2 RUn
 FROM eclipse-temurin:21-jre-jammy
 EXPOSE 8080
-COPY --from=build /home/app/build/libs/*.jar app.jar
+# Just take the jar we sent over
+COPY app.jar app.jar
 ENTRYPOINT ["java", "-jar", "/app.jar"]

@@ -2,6 +2,8 @@
 FROM eclipse-temurin:21-jdk-jammy AS build
 COPY --chown=root:root . /home/app
 WORKDIR /home/app
+# Grant execute permission to the gradlew script
+RUN chmod +x gradlew
 # Use the Gradle Wrapper instead of a pre-installed Gradle
 RUN ./gradlew build --no-daemon -x test
 

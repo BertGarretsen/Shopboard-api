@@ -24,8 +24,9 @@ public class Order {
     private String quantity;
     private String price;
 
+    @Column(columnDefinition = "boolean default true")
     @Builder.Default
-    private boolean inStock = false;
+    private boolean inStock = true;
 
     private int posX;
     private int posZ;

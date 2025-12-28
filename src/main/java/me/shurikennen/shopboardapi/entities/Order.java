@@ -24,6 +24,9 @@ public class Order {
     private String quantity;
     private String price;
 
+    @Builder.Default
+    private boolean inStock = false;
+
     private int posX;
     private int posZ;
 

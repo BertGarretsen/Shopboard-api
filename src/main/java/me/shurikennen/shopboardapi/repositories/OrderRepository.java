@@ -9,6 +9,9 @@ import java.util.List;
 @Repository
 public interface OrderRepository extends JpaRepository<Order, Long> {
 
-    List<Order> getByServer(String server);
+    List<Order> getByShopId(Long shopId);
 
+    List<Order> findAllByShopIdIn(List<Long> shopIds);
+
+    void deleteAllByShopIdIn(List<Long> shopIds);
 }

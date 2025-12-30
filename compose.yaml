@@ -16,12 +16,16 @@ services:
       - postgres_data:/var/lib/postgresql
   api:
     build: .
+    profiles:
+      - production
     ports:
       - '8080:8080'
     environment:
       - 'DB_URL=jdbc:postgresql://postgres:5432/${DB_NAME}'
       - 'DB_USERNAME=${DB_USERNAME}'
       - 'DB_PASSWORD=${DB_PASSWORD}'
+    labels:
+      org.springframework.boot.ignore: true
     depends_on:
       postgres:
         condition: service_healthy

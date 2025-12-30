@@ -26,6 +26,8 @@ Then you can run the application using Docker Compose:
 sudo docker compose --profile production up -d --build
 ```
 
+> I'm aware this is kinda shitty, but my VPS is not that powerful, so compiling on the vps was not really an option.
+
 ---
 
 ## Configuration
@@ -50,3 +52,4 @@ The application requires the following environment variables to be set for datab
 | /api/v1/orders/all/{serverHash}     | Retrieve all shops & their available orders    |
 | /api/v1/servers/dynmap/{serverHash} | Retrieve the format of dynmap this server uses |
 
+> {serverHash} DNS resolved address of the server SHA256 hashed (first 12 characters)

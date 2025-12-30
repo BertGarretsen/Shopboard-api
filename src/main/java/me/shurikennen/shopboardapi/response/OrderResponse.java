@@ -6,6 +6,7 @@ import lombok.Data;
 public class OrderResponse {
 
 
+    private final Long shopId;
     private final String iconId;
     private final String itemName;
     private final String description;

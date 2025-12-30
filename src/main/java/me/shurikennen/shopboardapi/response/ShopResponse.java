@@ -21,7 +21,7 @@ public class ShopResponse {
         for (Order order : orders) {
             String price = order.getPrice();
             String quantity = order.getQuantity();
-            this.orders.add(new OrderResponse(order.getIconId(), order.getItemName(), order.getDescription(), quantity, formatQuantity(quantity), price, formatPriceToDiamonds(price), order.isInStock()));
+            this.orders.add(new OrderResponse(order.getShopId(), order.getIconId(), order.getItemName(), order.getDescription(), quantity, formatQuantity(quantity), price, formatPriceToDiamonds(price), order.isInStock()));
         }
     }
 

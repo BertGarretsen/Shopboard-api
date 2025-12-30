@@ -1,6 +1,7 @@
 package me.shurikennen.shopboardapi.services;
 
 import lombok.RequiredArgsConstructor;
+import me.shurikennen.shopboardapi.entities.MinecraftServer;
 import me.shurikennen.shopboardapi.repositories.ServerRepository;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +13,9 @@ public class ServerService {
 
 
     public String getDynMapFormat(String serverHash) {
-        return serverRepository.getMinecraftServerByServerHash(serverHash).getDynMapFormat();
+        MinecraftServer server = serverRepository.getMinecraftServerByServerHash(serverHash);
+        if (server == null) return null;
+        return server.getDynMapFormat();
     }
 
 
